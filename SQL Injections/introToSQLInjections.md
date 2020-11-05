@@ -43,8 +43,9 @@ We can zero in on this search and be even more specific. Let's only list the ite
 SELECT item FROM shop_items WHERE price > 20;
 ```
 This would list the following products:
-`Pants, Hoodie`
-
+```
+Pants, Hoodie
+```
 Now that we have a basic understanding of SQL, let's jump into injections.
 
 ## What are SQL Injections?
