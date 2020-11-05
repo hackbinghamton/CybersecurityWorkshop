@@ -16,10 +16,10 @@ In this section, you'll learn
 SQL is a data management language used to communicate with databases. While it is not innately a programming language, it is still an extremely useful tool. If you're familiar with assembly, you'll know that assembly languages such as MIPS or x86 are one of the most direct ways to give instructions to a computer. Think of SQL as a language that allows you to *access and give instructions to a database*.
 
 Here are some general uses of SQL:
--Creating a new database
--Inserting data in an existing database
--Modifying data in an existing database
--Deleting data
+*Creating a new database
+*Inserting data in an existing database
+*Modifying data in an existing database
+*Deleting data
 
 ### Quick example using basic SQL syntax
 
