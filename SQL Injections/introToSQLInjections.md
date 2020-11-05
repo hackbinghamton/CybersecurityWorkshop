@@ -100,3 +100,20 @@ SELECT * FROM users WHERE username = 'hackbuadmin'--' AND password = ''
 Here, the SQL comment sequence `--` is used to remove the password check by hiding the `AND` clause of the query. If there is an existing username `hackbuadmin`, the attacker will login as that user.
 
 ## Preventing SQL Injection Attacks
+
+SQL Injection attacks are incredibly common, and have been the driving force behind many of the large data breaches you might have heard about in recent years. In 2019, it is reported that 25% of breaches started with an SQL Injection attack.
+
+The reason SQL Injection attacks are so common is mainly due to two factors:
+* There is a significant prevalence of SQL Injection vulnerabilities throughout many web applications
+* The database(s) vulnerable to SQL Injection attacks contain key information critical to the functionality of the application (meaning that a lot of the data vulnerable to SQL Injection attacks is generally very valuable)
+
+Most critical SQL Injection flaws within applications are sourced from **dynamic database queries with unregulated user input**. One example that comes to mind is the login form above. To prevent SQL Injection vulnerabilities, developers need to do one of two things:
+* Stop allowing dynamic queries to be created
+* Prevent malicious user input that can affect an SQL query
+
+### Specific Solutions
+Let's zero in on the two points made above and discuss how exactly developers can better prevent SQL Injection vulnerabilities from existing in their applications.
+
+One solution is using a whitelist of accepted user input as opposed to a blacklist or no regulation of input at all. While a blacklist can be useful in preventing certain inputs from being executed by attackers, it is far safer to use a whitelist. This is because using a whitelist will allow you as the developer to add accepted inputs, which means anything outside of the whitelist will not work.
+
+Assume, for example, that the input in the login form above whitelisted the use of alphanumerical characters (A-Z, 0-9). This means the attacker is extremely limited in their means of performing an SQL Injection attack. The same would not be true if a blacklist with `--` characters was made instead, because there are far more ways to perform attacks that are not inclusive to the use of the comment operator.
