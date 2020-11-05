@@ -81,4 +81,18 @@ This results in a different SQL query being generated:
 ```
 SELECT * FROM products WHERE category = 'Stickers'--' AND released=1;
 ```
-Here's why this is significant. In SQL, the double dash `--`is a comment indicator, just like `#` in Python or `/` in C. The addition of `'--'` in the URL appends it to the end of `Stickers`. This comments out the rest of the query, which specifies that `released=1` must be true. Now that is out of the equation, meaning items with a value of `released=0` can also be displayed.
+Here's why this is significant. In SQL, the double dash `--` is a comment indicator, just like `#` in Python or `/` in C. The addition of `'--'` in the URL appends it to the end of `Stickers`. This comments out the rest of the query, which specifies that `released=1` must be true. Now that is out of the equation, meaning items with a value of `released=0` can also be displayed.
+
+### Another Example
+
+Suppose there exists an unguarded web application with a simple set of text box forms that lets users log in with a username and password. If the user submits `hackbu` and `hack123` as a username and password, respectively, the following SQL query will be generated:
+```
+SELECT * FROM users WHERE username = 'hackbu' AND password = 'hack123';
+```
+If the username and password are correct, the login will be successful. However, an attacker can exploit this web application and login as any existing user without a password. Take for example the following query:
+```
+SELECT * FROM users WHERE username = 'hackbuadmin'--' AND password = ''
+```
+Here, the SQL comment sequence `--` is used to remove the password check by hiding the `AND` clause of the query. If there is an existing username `hackbuadmin`, the attacker will login as that user.
+
+## Preventing SQL Injection Attacks
