@@ -7,7 +7,7 @@ In this section, you'll learn
 1. What SQL is
 2. What an SQL Injection is
 3. How to perform an SQL Injection (ON PLACES WHERE YOU ARE EXPLICITLY GIVEN PERMISSION TO DO SO)
-4. How to prevent SQL Injections in applications
+4. How to prevent SQL Injection in applications
 
 ### Prerequisites
 *Optional:* basic knowledge of HTML frameworks and web security- this is not required but might help with your understanding!
@@ -48,4 +48,37 @@ Pants, Hoodie
 ```
 Now that we have a basic understanding of SQL, let's jump into injections.
 
-## What are SQL Injections?
+## What is SQL Injection?
+
+SQL Injection can be described as a web security vulnerability that can allow for cyber attacks to occur. Generally, its vulnerability will let attackers view data that they are not normally allowed to see. An attacker can capitalize on this by modifying, deleting or extracting data from a vulnerable website.
+
+Successful SQL Injection attacks will often result in data breaches, in which important information such as passwords, credit cards and other sensitive data is accessed by an attacker.
+
+## The Basics of an SQL Injection Attack
+
+Let's assume we have a basic shopping application that displays products in categories such as `Stickers`, `Hoodies`, and `Tees`.
+
+If a user were to click on the `Stickers` tab to navigate to that category, the browser would request the following URL:
+```
+https://my-online-store.com/products?category=Stickers
+```
+This causes the web application to generate an SQL query in response, retrieving the relevant products under the sticker category from the database and displaying them to the user. That query looks something like this:
+```
+SELECT * FROM products WHERE category = 'Stickers' AND released=1;
+```
+To break it down, here's exactly what this query asks the database to return:
+* All items in the products table (hence the use of the * operator)
+* The above request is then *specified* with `WHERE`, making sure that all the listed products are **only** a part of the `Stickers` category.
+* Finally, `AND` *adds* on to the previous request. This means only items that are marked as `released=1` will be displayed with this query.
+
+In this case, `released=1` is being used by the developer of this web application to hide unreleased products from the average browser of the website. This means that unreleased products will have a `released` value of `0`.
+
+This web application provides no defense against SQL Injection attacks. Because of this, an attacker can exploit the SQL query made from the URL above, and change it ever so slightly:
+```
+https://my-online-store.com/products?category=Stickers'--
+```
+This results in a different SQL query being generated:
+```
+SELECT * FROM products WHERE category = 'Stickers'--' AND released=1;
+```
+Here's why this is significant. In SQL, the double dash `--`is a comment indicator, just like `#` in Python or `/` in C. The addition of `'--'` in the URL appends it to the end of `Stickers`. This comments out the rest of the query, which specifies that `released=1` must be true. Now that is out of the equation, meaning items with a value of `released=0` can also be displayed.
