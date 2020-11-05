@@ -56,6 +56,10 @@ Successful SQL Injection attacks will often result in data breaches, in which im
 
 ## The Basics of an SQL Injection Attack
 
+Below are a few situations where attackers can exploit vulnerabilities in web applications to perform SQL Injection attacks.
+
+### Example Scenario #1: Online Store
+
 Let's assume we have a basic shopping application that displays products in categories such as `Stickers`, `Hoodies`, and `Tees`.
 
 If a user were to click on the `Stickers` tab to navigate to that category, the browser would request the following URL:
@@ -83,7 +87,7 @@ SELECT * FROM products WHERE category = 'Stickers'--' AND released=1;
 ```
 Here's why this is significant. In SQL, the double dash `--` is a comment indicator, just like `#` in Python or `/` in C. The addition of `'--'` in the URL appends it to the end of `Stickers`. This comments out the rest of the query, which specifies that `released=1` must be true. Now that is out of the equation, meaning items with a value of `released=0` can also be displayed.
 
-### Another Example
+### Example Scenario #2: Log-In Tab
 
 Suppose there exists an unguarded web application with a simple set of text box forms that lets users log in with a username and password. If the user submits `hackbu` and `hack123` as a username and password, respectively, the following SQL query will be generated:
 ```
