@@ -15,9 +15,7 @@
 
 ### Prerequisites
 
-Before starting this section, you should have an understanding of
-
-1. [Basic Python](https://github.com/HackBinghamton/PythonWorkshop) (for interactive sections only)
+Basically, none! Some knowledge of number theory and proofs might be helpful for the theory-focused sections.
 
 ## Introduction
 ### What is cryptography?
