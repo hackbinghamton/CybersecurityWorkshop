@@ -12,7 +12,6 @@
   * Asymmetric (Public-Key) Cryptography:
     * Trapdoor Permutation
     * Diffie-Hellman 
-* How to apply them
 
 ### Prerequisites
 
@@ -28,7 +27,27 @@ As an example, encrypting communication over a network has two main steps: estab
 
 *Source:* This workshop is based off material from Dan Boneh's free online cryptography course.
 
+## Layman's Breakdown
+
+These next sections below are going to cover a *lot* of math and theoretical definitions. To start off, here's a layman's digest of some of the main areas we'll be talking about (not necessarily in order):
+
+* **Symmetric Ciphers** - Any cipher that uses the same key to encrypt and decrypt (e.g. AES, Caesar cipher)
+  * Just take your message, chuck it in the cipher with a few random bytes for a key, and out goes ciphertext
+  * To decrypt, chuck the message in the cipher again with the same key, there's your plaintext
+  * **Pros:** Fast (and used for most network traffic encryption because of this)
+  * **Cons:** Requires a method to get both parties the key without it being intercepted (see Diffie Helman below, or check out PGP if interested)
+* **Asymmetric Cryptography** - Also known as public-key cryptography -- requires both parties to each have a private and public key
+  * To send someone a message, encrypt your message with their public key
+  * When receiving the message, the recipient can use their private key to undo what the public key does
+  * Only the corresponding private (secret) key can decrypt messages encrypted with the public key
+  * **Pros:** Anyone can send messages to anyone without a key exchange; provides authentication where symmetric encryption can't
+  * **Cons:** Can't encrypt a lot of data (must be less than the length of the key)
+  
+Now, with this basic understanding, let's hop into cryptography from the ground up.
+
 ---
+
+## Theory of Cryptography
 ### Simple Example Ciphers
 To start, we'll begin with some ciphers that were used seriously in the past but nowadays with advances in computing are easily broken. You should only use these ciphers recreationally. 
 
