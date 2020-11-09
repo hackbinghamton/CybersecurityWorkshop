@@ -4,7 +4,7 @@
 
 Cybersecurity is a field that's rarely covered in the CS curriculum, even though it can be one of the most exhilarating fields in tech. It covers so many bases -- from IT administration, to mathematics and cryptography, to hardware architecture, to web development. In some ways, it's like studying the Dark Arts from Harry Potter -- it's good to be familiar with, fun to play around with, but terrifying when used to effect in the wild.
 
-With this in mind, please note that **you should *never* use any of the knowledge in this workshop for non-approved purposes** -- whether you want to test a website for XSS vulnerabilities, capture packets on the WiFi, or otherwise. **This material is purely educational, and HackBU and its organizers are not responsible for any damages that you cause because of ignoring the above directive.**
+With this in mind, please note that ***never* use any of the knowledge in this workshop for non-approved purposes** -- whether you want to test a website for XSS vulnerabilities, capture packets on the WiFi, or otherwise. **This material is purely educational, and HackBU and its organizers are not responsible for any damages that you cause because of ignoring the above directive.**
 
 ## Sections
 
