@@ -19,6 +19,14 @@ How to capture, inspect, and interpret network traffic with Wireshark!
 * **[Intro to and Theory of Cryptography](https://github.com/HackBinghamton/CybersecurityWorkshop/blob/main/cryptography.md)** -
 A primer on some basics of modern cryptography, as well as details on the history and mathematics of cryptography over the years!
 
+## Further Resources
+
+If you'd like to learn more about hacking and do some target practice, be sure to check out the following:
+
+* **[Web Security Academy](https://portswigger.net/web-security)** - This massive, interactive, and free tutorial gives you a ton of information on how to find and exploit bugs in web applications.
+* **[Hack the Box](https://www.hackthebox.eu/)** - A huge collection of vulnerable VMs hosted in the cloud that you can attack!
+* **[VulnHub](https://www.vulnhub.com/)** - A repository of VM images if you'd like to host a vulnerable box locally.
+
 ## Feedback
 
 We hope you enjoy the workshop! Let us know of any feedback you have for a chance to get a free HackBU T-shirt at this form [here](https://forms.gle/LACKWdwEnqtUjLD17)!
