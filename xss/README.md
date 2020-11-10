@@ -51,25 +51,25 @@ To start, head over to the first exercise here: https://xss-game.appspot.com/lev
 
 You should see something like this:
 
-![1-start](/home/lambda/repos/CybersecurityWorkshop/xss/1-start.png)
+![1-start](1-start.png)
 
 Notice that we have some direct user input on this page -- the search bar.
 
 Let's throw something in there and see how the web page reacts. In this case, we entered "test":
 
-![1-poke](/home/lambda/repos/CybersecurityWorkshop/xss/1-poke.png)
+![1-poke](1-poke.png)
 
 Ooh, interesting -- we can see that our text from the search gets echoed back to us on the results page. Let's see if we can get some JavaScript going here:
 
-![1-payload](/home/lambda/repos/CybersecurityWorkshop/xss/1-payload.png)
+![1-payload](1-payload.png)
 
 Once we press enter, we should hopefully see an alert box pop up!
 
-![1-alert](/home/lambda/repos/CybersecurityWorkshop/xss/1-alert.png)
+![1-alert](1-alert.png)
 
 This proves that we've got arbitrary JavaScript execution. Now, you might say "Hey, dude, why do I care if I can pop up an alert box on my own browser?", and that'd be a good question. If you look up at the URL, you'll notice that our search query is kept up there:
 
-![1-url](/home/lambda/repos/CybersecurityWorkshop/xss/1-url.png)
+![1-url](1-url.png)
 
 This means that whatever code you write between the `<script>` tags will get executed when you visit the link, or, more insidiously, when someone else visits your custom-crafted link.
 
@@ -79,7 +79,7 @@ Now, head over to https://xss-game.appspot.com/level2/frame
 
 Here, we can see there's a chat program:
 
-![2-page](/home/lambda/repos/CybersecurityWorkshop/xss/2-page.png)
+![2-page](2-page.png)
 
 Your first instinct may be to enter `<script>alert(1)</script>` into the chat. This is definitely a good idea, but sadly, that won't work here.
 
@@ -87,11 +87,11 @@ There are *many* different kinds of triggers for XSS -- like, [at least a few hu
 
 Let's try this against our chat program!
 
-![2-text](/home/lambda/repos/CybersecurityWorkshop/xss/2-text.png)
+![2-text](2-text.png)
 
 Now, this wouldn't be trivial to find -- there are many triggers to attempt, and usually one would use a program like Burp Suite to automate brute-forcing payloads. Let's press enter to see our reward:
 
-![3-alert](/home/lambda/repos/CybersecurityWorkshop/xss/3-alert.png)
+![3-alert](3-alert.png)
 
 The cool part about a stored XSS attack like this is that if you refresh the page, you'll be presented with the error again. You don't have to do anything special to be a victim of a stored XSS attack -- just visiting the page normally is enough to trigger the payload.
 
