@@ -24,7 +24,7 @@ Here are some general uses of SQL:
 
 ### Quick example using basic SQL syntax
 
-Lets assume we have a table `shop_items` containing surface level information for items being listed on an online store. Also pretend the number values are implicitly counted as USD.
+Let's assume we have a table `shop_items` containing surface level information for items being listed on an online store. Also pretend that the number values are implicitly counted as USD.
 
 |item   |price   |
 |---	|---	 |
@@ -33,7 +33,7 @@ Lets assume we have a table `shop_items` containing surface level information fo
 |Hoodie |30   	 |
 |Socks  |12      |
 
-If you wanted to get a list of all the item names, you'd do
+If you wanted to get a list of all the item names, you'd do:
 ```
 SELECT item FROM shop_items;
 ```
@@ -94,7 +94,7 @@ Suppose there exists an unguarded web application with a simple set of text box 
 ```
 SELECT * FROM users WHERE username = 'hackbu' AND password = 'hack123';
 ```
-If the username and password are correct, then this query will return a result, and the login will be successful. However, an attacker can exploit this web application and login as any existing user without a password. Take for example the following query:
+If the username and password are correct, then this query will return a result, and the login will be successful. However, an attacker can exploit this web application and login as any existing user without a password. Take, for example, the following query:
 ```
 SELECT * FROM users WHERE username = 'hackbuadmin'--' AND password = ''
 ```
@@ -102,7 +102,7 @@ Here, the SQL comment sequence `--` is used to remove the password check by hidi
 
 ## Preventing SQL Injection Attacks
 
-SQL Injection attacks are incredibly common, and have been the driving force behind many of the large data breaches you might have heard about in recent years. In 2019, it is reported that 25% of breaches started with a SQL Injection attack.
+SQL Injection attacks are incredibly common and have been the driving force behind many of the large data breaches you might have heard about in recent years. In 2019, it is reported that 25% of breaches started with a SQL Injection attack.
 
 The reason SQL Injection attacks are so common is mainly due to two factors:
 * There is a significant prevalence of SQL Injection vulnerabilities throughout many web applications
@@ -115,7 +115,7 @@ Most critical SQL Injection flaws within applications are sourced from **dynamic
 ### Specific Solutions
 Let's zero in on the two points made above and discuss how exactly developers can better prevent SQL Injection vulnerabilities from existing in their applications.
 
-One solution is using a whitelist of accepted user input as opposed to a blacklist or no regulation of input at all. While a blacklist can be useful in preventing certain inputs from being executed by attackers, it is far safer to use a whitelist. This is because using a whitelist will allow you as the developer to add accepted inputs, which means anything outside of the whitelist will not work.
+One solution is using a whitelist of accepted user input as opposed to a blacklist or no regulation of input at all. While a blacklist can be useful in preventing certain inputs from being executed by attackers, it is far safer to use a whitelist. Using a whitelist will allow you as the developer to add accepted inputs, which means anything outside of the whitelist will not work.
 
 Assume, for example, that the input in the login form above whitelisted the use of alphanumerical characters (A-Z, 0-9). This means the attacker is extremely limited in their means of performing an SQL Injection attack. The same would not be true if a blacklist with `--` characters was made instead, because there are far more ways to perform attacks that are not inclusive to the use of the comment operator.
 
