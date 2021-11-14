@@ -26,6 +26,7 @@ Above all, one of the best resources for someone looking to get into cybersecuri
 Other helpful resources in the form of podcasts/shows include:
 
  **[Security Now](https://twit.tv/shows/security-now)**, a podcast hosted by Steve Gibson (the man who coined the term 'spyware') and Leo Laporte. Check out their weekly episodes if you want to stay informed on modern day cybersecurity news.
+ 
  **[Cyber Insecurity](https://www.youtube.com/c/CyberInsecurity/videos)**, a show in which Neal Bridges, a former NSA hacker with over 20 years of experience in the industry, discusses the challenges people new and existing in the cyber field face on a daily basis, as well as how beginners can get into cybersecurity.
 
 If you'd like to learn more about hacking and do some target practice, be sure to check out the following:
