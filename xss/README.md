@@ -47,7 +47,7 @@ For these examples, we'll be using Google's XSS Game. Feel free to check out the
 
 ### Reflected XSS via Query String Parameter
 
-To start, head over to the first exercise here: https://xss-game.appspot.com/level1/frame
+To start, head over to the first exercise here: [https://xss-game.appspot.com/level1/](https://xss-game.appspot.com/level1)
 
 You should see something like this:
 
