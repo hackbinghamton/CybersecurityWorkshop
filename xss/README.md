@@ -43,7 +43,7 @@ XSS can happen whenever a website allows untrusted (read: arbitrary) user input 
 
 ## Examples and Practice
 
-For these examples, we'll be using Google's XSS Game. Feel free to check out the normal version of it [here](https://xss-game.appspot.com/).
+For these examples, we'll be using Google's XSS Game. If you want to do it completely yourself, visit it [here](https://xss-game.appspot.com/). The following links are given through a walkthrough basis.
 
 ### Reflected XSS via Query String Parameter
 
@@ -94,6 +94,8 @@ Now, this wouldn't be trivial to find -- there are many triggers to attempt, and
 ![3-alert](3-alert.png)
 
 The cool part about a stored XSS attack like this is that if you refresh the page, you'll be presented with the error again. You don't have to do anything special to be a victim of a stored XSS attack -- just visiting the page normally is enough to trigger the payload.
+
+We just walked through two levels of Google's XSS game. If you want to try out the rest yourself, visit https://xss-game.appspot.com/
 
 ## Protecting Against XSS
 
